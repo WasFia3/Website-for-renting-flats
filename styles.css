@@ -1,0 +1,937 @@
+:root {
+  --primary-dark: #373435;
+  --primary-green: #548644;
+  --light-green: #d1e97c;
+  --text-light: #ffffff;
+  --text-dark: #4a4849;
+  --background-gradient: linear-gradient(to right, #548644, #d1e97c);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sticky footer setup */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--background-gradient);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.sidebar {
+  width: 150px;
+  height: 100vh;
+  background: var(--primary-dark);
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--light-green);
+  text-decoration: underline;
+}
+
+/* Important: make main expand to fill the page */
+main {
+  flex: 1;
+  margin-left: 170px;
+  padding: 40px 20px;
+}
+
+main h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 3px solid var(--primary-green);
+  color: var(--primary-dark);
+}
+
+.site-footer {
+  background: var(--primary-dark);
+  color: #ddd;
+  text-align: center;
+  padding: 15px;
+  border-top: 2px solid var(--primary-green);
+  font-size: 0.9rem;
+}
+
+
+button {
+  padding: 10px 16px;
+  background: var(--primary-dark);
+  color: var(--text-light);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--text-dark);
+}
+
+input, textarea, select {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 2px rgba(84, 134, 68, 0.2);
+}
+
+.site-footer {
+  background: var(--primary-dark);
+  color: #ddd;
+  text-align: center;
+  padding: 15px;
+  border-top: 2px solid var(--primary-green);
+  margin-top: 50px;
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  width: 60px; 
+  height: auto;
+}
+
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+}
+
+.success-message {
+  color: var(--primary-green);
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+
+
+/* Hero section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 80px;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-buttons button {
+  margin-right: 15px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.hero-image img {
+  width: 400px;
+}
+
+
+
+
+
+
+/* Search section */
+
+
+
+.flats-table {
+  width: 100%;
+  border-collapse: collapse;  /* بدل separate لـ collapse */
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  border: none; /* بحذف البوردر الخارجي */
+  font-size: 0.95rem;
+}
+
+.flats-table th,
+.flats-table td {
+  padding: 12px 15px;
+  text-align: left; /* زي الرسائل */
+  border-bottom: 1px solid #ccc;
+}
+
+  
+.flats-table thead {
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+}
+
+.search-form {
+  margin-bottom: 20px; 
+}
+
+
+
+/* messegaes section */
+
+
+.messages-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.messages-table thead {
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+}
+
+.messages-table th,
+.messages-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+
+/* login section */
+
+
+.login-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  background-color: #fff; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  color: var(--text-dark, #333);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*  button style */
+
+.login-container input[type="submit"] {
+  background-color: var(--primary-dark, #004d99);
+  color: var(--text-light, #fff);
+  border: 1px solid var(--primary-dark, #004d99);
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: none; /* ما في ظل */
+}
+
+
+
+
+/*  register card */
+
+#register-page .container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+#register-page .card {
+    background-color: #373435;
+    padding: 40px 40px 30px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#register-page .circle-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    border: 3px solid #d1e97c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+#register-page .circle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+#register-page h2 {
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/*  contact section */
+
+
+.contact-page {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark, #333);
+}
+
+.contact-container h2 {
+  color: var(--primary-dark, #004d99);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.contact-container p {
+  font-size: 1rem;
+  color: var(--text-muted, #555);
+  margin-bottom: 25px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.contact-form .form-group {
+  margin-bottom: 18px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--primary-dark, #004d99);
+}
+
+.contact-form label span {
+  color: #d33;
+  margin-left: 2px;
+}
+
+
+.contact-form input[type="email"],
+.contact-form input[type="text"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--primary-dark, #004d99);
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 13px 0;
+  background-color: var(--primary-dark, #004d99);
+  color: var(--text-light, #fff);
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+
+
+/*  owner messages section */
+.messages-title {
+  color: var(--dark);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--gray);
+}
+
+.messages-wrapper,
+.owner-messages-page table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: var(--dark);
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+/* === Table Headings === */
+.messages-table th,
+.owner-messages-page thead th {
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 12px 15px;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 13px;
+}
+
+/* === Table Cells === */
+.messages-table td,
+.owner-messages-page td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--gray);
+  vertical-align: middle;
+}
+
+.messages-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* === Rows === */
+.message-row.unread {
+  background-color: var(--unread-bg);
+  font-weight: bold;
+}
+
+.message-row.unread td {
+  border-left: 3px solid var(--dark);
+}
+
+.messages-table tr:hover,
+.owner-messages-page tbody tr:hover {
+  background-color: var(--hover-bg);
+  cursor: pointer;
+}
+
+/* === Columns === */
+.msg-date    { width: 150px; white-space: nowrap; }
+.msg-sender  { width: 180px; }
+.msg-subject { min-width: 200px; }
+.msg-flat, .msg-request, .msg-actions { width: 120px; text-align: center; }
+
+/* === Buttons === */
+.msg-btn,
+.owner-messages-page .btn {
+  display: inline-block;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #1b1b1b; /* خط غامق بدل الأبيض */
+  text-decoration: none;
+  margin: 2px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+/* خلفيات متناسقة */
+.msg-btn-view        { background-color: #dcdcdc; }   /* رمادي فاتح */
+.msg-btn-respond     { background-color: #c4e8c2; }   /* أخضر باهت */
+.msg-btn-approve     { background-color: #d5c2e8; }   /* بنفسجي باهت */
+.msg-btn-details     { background-color: #f5d1ab; }   /* برتقالي باهت */
+
+/* Hover أغمق شوي */
+.msg-btn-view:hover     { background-color: #c0c0c0; }
+.msg-btn-respond:hover  { background-color: #a8dba6; }
+.msg-btn-approve:hover  { background-color: #c2abe0; }
+.msg-btn-details:hover  { background-color: #efb678; }
+
+/* === Filters === */
+.message-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  background-color: #373435;
+  color: white;
+  border: 1px solid var(--gray);
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+
+.filter-btn.active {
+  background-color: var(--dark);
+  color: white;
+  border-color: var(--dark);
+  cursor: default;
+}
+
+/* === Links & Icons === */
+a, .msg-link {
+  text-decoration: none;
+  color: var(--blue-link);
+  transition: color 0.3s ease;
+}
+
+.msg-link:hover {
+  color: #c9e078;
+  text-decoration: underline;
+}
+
+.msg-icon-unread    { color: var(--orange-icon); margin-right: 5px; }
+.msg-icon-important { color: var(--red-icon); margin-left: 5px; }
+
+/* === Message Types === */
+.message-type {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75em;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.type-appointment_request  { background-color: #e3f2fd; color: #0d47a1; }
+.type-appointment_response { background-color: #e8f5e9; color: #2e7d32; }
+.type-rent_confirmation    { background-color: #fff3e0; color: #e65100; }
+.type-flat_approval        { background-color: #f3e5f5; color: #6a1b9a; }
+.type-general              { background-color: #e0e0e0; color: #424242; }
+
+/* === Empty Placeholder === */
+.no-messages {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 20px;
+}
+
+.messages-table tbody tr:hover,
+.owner-messages-page tbody tr:hover,
+.message-row:hover {
+    background-color: #f1f1f1; /* أو اللون اللي بدك ياه */
+    box-shadow: 0 0 8px rgba(50, 50, 50, 0.15);
+    transform: translateY(-1px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* الصفحة الرئيسية */
+#respond-appointment-page {
+    background-color: #f2f2f2; /* رمادي فاتح */
+}
+
+#respond-main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* تفاصيل الرسالة */
+#message-details {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fbfbfb;
+}
+
+#message-details h2 {
+    color: #1b1b1b;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+#message-details p {
+    margin: 0.5rem 0;
+    color: #373435;
+}
+
+/* نموذج الرد */
+#response-form {
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #ffffff;
+}
+
+#response-options h2 {
+    color: #1b1b1b;
+    margin-bottom: 1.5rem;
+}
+
+/* خيارات الرد */
+.response-option {
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    background: #f7f7f7;
+}
+
+.response-option label {
+    font-weight: 600;
+    color: #1b1b1b;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+/* تفاصيل الخيارات */
+.option-details {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #dcdcdc;
+}
+
+.option-details label {
+    display: block;
+    margin: 0.75rem 0 0.25rem;
+    color: #373435;
+    font-weight: normal;
+}
+
+.option-details input[type="text"],
+.option-details input[type="date"],
+.option-details input[type="time"],
+.option-details select,
+.option-details textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: #fdfdfd;
+    color: #1b1b1b;
+}
+
+.option-details textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* أزرار الإجراءات */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #1b1b1b;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #373435;
+}
+
+.btn-secondary {
+    background-color: #888888;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #555555;
+}
+
+/* رسائل التنبيه */
+.alert.success {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #e6f4ea;
+    color: #256029;
+    border: 1px solid #c5e1c5;
+    border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* الصفحة الرئيسية */
+#view-message-page {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* عنوان الصفحة */
+#view-message-page .page-title {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* رأس الرسالة */
+#message-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#message-header h2 {
+    color: #27ae60;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.message-meta {
+    color: #7b8a8b;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.flat-info {
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.flat-info a {
+    color: #219150;
+    text-decoration: none;
+}
+
+.flat-info a:hover {
+    text-decoration: underline;
+}
+
+/* جسم الرسالة */
+#message-body {
+    padding: 1.5rem;
+    background-color: #f4f6f6;
+    border-radius: 6px;
+    border-left: 4px solid #27ae60;
+    margin-bottom: 2rem;
+}
+
+#message-body p {
+    color: #34495e;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* إجراءات الرسالة */
+#message-actions {
+    margin-bottom: 2rem;
+}
+
+.actions-title {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* الأزرار */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #27ae60;
+    color: white;
+    border: 1px solid #219150;
+}
+
+.btn-primary:hover {
+    background-color: #219150;
+}
+
+.btn-secondary {
+    background-color: #bdc3c7;
+    color: white;
+    border: 1px solid #95a5a6;
+}
+
+.btn-secondary:hover {
+    background-color: #95a5a6;
+}
+
+/* رابط العودة */
+.back-link {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* offer flat */
+
+/* الحقول النصية */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* عند التركيز */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #f9fff9;
+}
+
+/* ComboBoxes (select) خاصة */
+select {
+    background-color: #fff;
+    cursor: pointer;
+}
+
